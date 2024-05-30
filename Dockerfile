@@ -10,8 +10,8 @@ ADD ./webapp/requirements.txt /tmp/requirements.txt
 RUN python3 -m venv .env
 RUN source .env/bin/activate
 # python3 -m pip install -r requirements.txt
-
-RUN pip3 install --no-cache-dir -q -r /tmp/requirements.txt
+RUN python3 -m pip3 install --no-cache-dir -q -r /tmp/requirements.txt
+# RUN pip3 install --no-cache-dir -q -r /tmp/requirements.txt
 
 # Add our code
 ADD ./webapp /opt/webapp/
