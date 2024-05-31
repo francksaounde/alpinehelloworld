@@ -8,8 +8,7 @@ ADD ./webapp/requirements.txt /tmp/requirements.txt
 # Install dependencies
 # create venv before
 RUN python3 -m venv .env
-# RUN source .env/bin/activate
-RUN . .env/bin/activate
+RUN source .env/bin/activate
 # python3 -m pip install -r requirements.txt
 RUN pip install -r /tmp/requirements.txt
 # RUN pip3 install --no-cache-dir -q -r /tmp/requirements.txt
