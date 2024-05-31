@@ -6,7 +6,12 @@ RUN apk add --no-cache --update python3 py3-pip bash
 ADD ./webapp/requirements.txt /tmp/requirements.txt
 
 # Install dependencies
-RUN pip3 install --no-cache-dir -q -r /tmp/requirements.txt
+# create venv before
+RUN python3 -m venv .env
+RUN source .env/bin/activate
+# python3 -m pip install -r requirements.txt
+# RUN pip install --break-system-packages -r /tmp/requirements.txt
+RUN pip install --break-system-packages --no-cache-dir -q -r /tmp/requirements.txt
 
 # Add our code
 ADD ./webapp /opt/webapp/
