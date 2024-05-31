@@ -11,6 +11,9 @@ RUN python3 -m venv .env
 RUN source .env/bin/activate
 # python3 -m pip install -r requirements.txt
 # RUN pip install --break-system-packages -r /tmp/requirements.txt
+
+# il existe une bonne documentation sur la correction du bug sur pip à l'url suivante
+# https://github.com/nodejs/docker-node/issues/2010
 RUN pip install --break-system-packages --no-cache-dir -q -r /tmp/requirements.txt
 
 # Add our code
