@@ -3,7 +3,8 @@ pipeline {
        ID_DOCKER = "${ID_DOCKER_PARAMS}"
        IMAGE_NAME = "alpinehelloworld"
        IMAGE_TAG = "latest"
-//       PORT_EXPOSED = "80" à paraméter dans le job
+       PORT_EXPOSED = "8080" //à paraméter dans le job
+       IP_VM_JENKINS = "http://ec2-54-146-73-55.compute-1.amazonaws.com"
        STAGING = "${ID_DOCKER}-staging"
        PRODUCTION = "${ID_DOCKER}-production"
      }
@@ -35,7 +36,8 @@ pipeline {
            steps {
               script {
                 sh '''
-                    curl http://172.17.0.1:${PORT_EXPOSED} | grep -q "Hello world!"
+                    //curl http://172.17.0.1:${PORT_EXPOSED} | grep -q "Hello world!"
+                    curl ${IP_VM_JENKINS}:${PORT_EXPOSED} | grep  "Hello world!"
                 '''
               }
            }
