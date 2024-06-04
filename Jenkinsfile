@@ -1,9 +1,11 @@
 pipeline {
      environment {
-       ID_DOCKER = "${ID_DOCKER_PARAMS}"
+       ID_DOCKER = "${ID_DOCKER_PARAMS}" // à paramétrer 
        IMAGE_NAME = "alpinehelloworld"
        IMAGE_TAG = "latest"
        PORT_EXPOSED = "80" //à paraméter dans le job
+       // heroku_api_key (paramétrer la clé heroku dans les credentials)
+       // dockerhub (paramétrer le mot de passe du docker hub dans les credentials)   
        IP_VM_JENKINS = "http://ec2-18-208-181-17.compute-1.amazonaws.com"
        STAGING = "${ID_DOCKER}-staging"
        PRODUCTION = "${ID_DOCKER}-production"
