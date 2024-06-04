@@ -73,7 +73,8 @@ pipeline {
      
      stage('Push image in staging and deploy it') {
        when {
-              expression { GIT_BRANCH == 'origin/master' }
+              // expression { GIT_BRANCH == 'origin/master' }
+            expression { GIT_BRANCH == 'just_to_force_failure' }
             }
       agent any
       environment {
