@@ -4,7 +4,7 @@ pipeline {
        IMAGE_NAME = "alpinehelloworld"
        IMAGE_TAG = "latest"
        PORT_EXPOSED = "80" //à paraméter dans le job
-       IP_VM_JENKINS = "http://ec2-54-146-73-55.compute-1.amazonaws.com"
+       IP_VM_JENKINS = "http://ec2-3-83-92-14.compute-1.amazonaws.com"
        STAGING = "${ID_DOCKER}-staging"
        PRODUCTION = "${ID_DOCKER}-production"
      }
