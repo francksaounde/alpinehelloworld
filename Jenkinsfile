@@ -1,5 +1,5 @@
-/* import shared-library */
-@Library('shared-library')_
+/* import eazy-shared-library */
+@Library('eazy-shared-library')_
 
 pipeline {
      environment {
